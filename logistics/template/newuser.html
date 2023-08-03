@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static 'medians' baseUrl %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>add user</title>
+
+    <style>
+        .search{
+            margin-left: 300px;
+        }
+        .search input{
+            padding: 5px;
+        }
+        .search button{
+            padding: 5px;
+        }
+        .staff img{
+            width: 100px;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+                <div class="logout">
+                    <a href="{% url 'admin_page' %}">
+                        back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-12 ad-body">
+                <div class="col-md-12">
+                    <div class="col-md-12" style="border: 1px solid rgb(4, 250, 147);padding: 10px;border-radius: 5px;margin: 5px;background-color: white;">
+                        <form action="" method="POST" enctype="multipart/form-data">
+
+                            {% csrf_token %}
+                            <div class="col-md-12">
+                                <h1>
+                                    User Information
+                                </h1>
+                                <div class="col-md-12">
+                                    <div>
+                                        <label>Useer Name</label>
+                                        <input class="form-control" type="text" placeholder="name" name="username">
+                                    </div>
+                                    <div>
+                                        <label>User Email</label>
+                                        <input class="form-control" type="email" placeholder="email" name="email">
+                                    </div>
+                                    <div>
+                                        <label>Address</label>
+                                        <input class="form-control" type="text" placeholder="address" name="address">
+                                    </div>
+
+                                    <div>
+                                        <label>Number</label>
+                                        <input class="form-control" type="number" placeholder="number" name="number">
+                                    </div>
+                                    <div>
+                                        <label>Gender</label>
+                                        <input class="form-control" type="text" placeholder="ender" name="gender">
+                                    </div>
+                                    <div>
+                                        <label>Password</label>
+                                        <input class="form-control" type="password" placeholder="password" name="password1">
+                                    </div>
+                                    <div>
+                                        <label>Comfairm Password</label>
+                                        <input class="form-control" type="password" placeholder="confairm password" name="password2">
+                                    </div>
+                                </div>
+                            </div>
+                            {% for message in messages %}
+                            <div class="col-md-12 bg-info" style="margin:10px;">
+                                <p class="text-white" style="padding:10px;">{{message}}</p>
+                            </div>
+                            {% endfor %}
+                            <div class="">
+                                <button class="btn-success" style="padding: 10px;margin: 10px;margin-left:30px">Create</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'styles/js.js' %}"></script>
+</html>

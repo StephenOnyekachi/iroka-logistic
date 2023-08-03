@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static 'medians' baseUrl %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>delete</title>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+
+                <div class="logout">
+                    <a href="{% url 'users' %}">
+                        back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-12 ad-body">
+                <div class="col-md-12">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="col-md-12" style="border: 1px solid rgb(4, 250, 147);padding: 10px;border-radius: 5px;margin: 5px;background-color: white;">
+                            <p>
+                                are you sure you want to delete this staff
+                            </p>
+                            <h1>{{delete.username}}</h1>
+                            <div>
+                                <button class="btn-danger" style="padding:5px;">Yes</button>
+                                <a href="{% url 'users' %}" class="btn-success" style="padding: 5px;">No</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="styles/js.js"></script>
+</html>

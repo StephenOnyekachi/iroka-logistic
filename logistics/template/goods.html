@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load static %}
+{% static 'medians' baseUrl %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'static/Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>goods</title>
+    <style>
+        .primary{
+            padding: 100px;
+            margin-top: 50px;
+            /* margin-left: 50px;
+            margin-right: 50px; */
+        }
+        .primary h3{
+            color: gold;
+        }
+        .primary label{
+            padding: 5px;
+        }
+        .primary span{
+            float: right;
+            font-size: 16px;
+            text-transform: capitalize;
+        }
+        .border{
+            border-bottom: 1px solid white;
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+
+                <div class="bars">
+                    <i class="fa fa-bars"></i>
+                </div>
+
+                <div class="menus">
+                    <ul>
+                        <li>
+                            <a href="{% url 'index' %}">home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        {% if item %}
+            {% for item in item %}
+                <div class="col-md-12 bg-primary primary">
+            <div class="col-md-6">
+                <div class="col-md-12 border">
+                    <h3 class="text-danger">
+                        Sender Info
+                    </h3>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Sender Name:</label>
+                    <span class="">{{item.sender_name}}</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Sender Address:</label>
+                    <span class="">{{item.sender_address}}</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Sender Number:</label>
+                    <span class="">{{item.sender_number}}</span>
+                </div>
+                <hr>
+                <div class="col-md-12 border">
+                    <h3 class="text-danger">
+                        Receiver Info
+                    </h3>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Receiver Name:</label>
+                    <span class="">{{item.receiver_name}}</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Receiver Address:</label>
+                    <span class="">{{item.receiver_address}}</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Receiver Number:</label>
+                    <span class="">{{item.receiver_number}}</span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="col-md-12 border">
+                    <h3 class="text-danger">
+                        Company Info
+                    </h3>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Booking Number</label>
+                    <span>{{item.booking_mode}}</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Item:</label>
+                    <span class="">{{item.item}}</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Weight:</label>
+                    <span class="">{{item.weight}} kg</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Pickup Time:</label>
+                    <span class="">{{item.pickup_time}}</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Pickup Date:</label>
+                    <span class="">{{item.pickup_date}}</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Quantity:</label>
+                    <span class="">{{item.qnty}}</span>
+                </div>
+                <div class="col-md-12 border">
+                    <label>Status:</label>
+                    {% if item.delivered %}
+                    <img src="{% static 'Images/d13.jpg' %}" width="50" alt="">
+                    <span>Delivered</span>
+                    {% else %}
+                    <img src="{% static 'Images/d4.jpg' %}" width="50" alt="">
+                    <span>Not Delivered</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-md-12 goods">
+                <div>
+                    <h3>
+                        Item not fund, chech your booking number and try again
+                    </h3>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+
+<script src="styles/js.js"></script>
+</html>

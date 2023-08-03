@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static 'medians' baseUrl %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>message</title>
+
+    <style>
+        .search{
+            margin-left: 300px;
+        }
+        .search input{
+            padding: 5px;
+        }
+        .search button{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+<!--                <div class="search">-->
+<!--                    <form action="" method="GET" enctype="multipart/form-data">-->
+
+<!--                        <input type="text" placeholder="enter tracking number">-->
+<!--                        <button>search</button>-->
+<!--                    </form>-->
+<!--                </div>-->
+                <div class="logout">
+                    <a href="{% url 'admin_page' %}">
+                        back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-12 ad-body">
+                <div class="col-md-12">
+                    {% for email in emails %}
+                    <div class="col-md-12" style="border: 1px solid rgb(4, 250, 147);padding: 10px;border-radius: 5px;margin: 5px;background-color: white;">
+                        <div class="col-md-4" style="color:green;">
+                            <h1>
+                                {{email.name}}
+                            </h1>
+                            <h3>{{email.email}}</h3>
+                            <h4>Date: {{email.time}}</h4>
+                            <div>
+                                <a href="{% url 'delete_message' email.id %}" style="color:blue;">Delete delete</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="color:green;">
+                            <h1>Message</h1>
+                            <p>
+                                {{email.message}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'styles/js.js' %}"></script>
+</html>

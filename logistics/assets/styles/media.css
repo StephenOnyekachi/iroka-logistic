@@ -1,0 +1,116 @@
+@media only screen and (max-width: 900px){
+
+    .logo a{
+        font-size: 20px;
+    }
+
+    .logo img{
+        margin-top: -10px;
+    }
+    .menu .bars{
+        display: block;
+    }
+
+    .menus{
+        width: 100%;
+        position: absolute;
+        padding-left: 2px; 
+        padding: 10px;
+        top: 50px;
+        display: none;
+    }
+    .menus ul{
+        position: absolute;
+        width: 100%;
+        display: block;
+        left: -30px;
+        background-color: black;
+    }
+    .menus ul li{ 
+        display: block;
+        text-decoration: none;
+        width: 100%;
+    }
+    .outer .track1 h3{
+        font-size: 20px;
+    }
+    .outer .track1 h1{
+        font-size: 40px;
+        margin-left: -20px;
+    }
+    .outer .track1 p{
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    .track1 p span::after{
+        height: 5%;
+        width: 0px;
+    }
+    .outer .track{
+        position: absolute;
+        width: 300px;
+        left: -90px;
+        top: -20px;
+        height: 200px;
+    }
+    .outer .track form{
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.288);
+        height: 190px;
+        width: 100%;
+    }
+    .track input{
+        margin-top: -30px;
+    }
+    .track h3{
+        margin-top: 5px;
+    }
+
+    .body2{
+        padding: 5px;
+    }
+
+    .gallery{
+        padding: 20px;
+        background-color: rgb(28, 28, 255);
+        position: relative;
+        width: 100%;
+        left: 0;
+        height: 300px;
+        margin-bottom: 10px;
+    }
+    .gallery h1{
+        font-size: 20px;
+        margin-top: -10px;
+        padding: 10px;
+    }
+    .gallery h1 img{
+        width: 70px;
+        height: 70px;
+        float: none;
+    }
+    .gallery .logistic i{
+        display: none;
+    }
+    .gallery .logistic h1{
+        font-size: 15px;
+        margin-left: -0px;
+        left: 65px;
+        position: absolute;
+    }
+    .comments p{
+        font-size: 20px;
+        color: black;
+    }
+    .contact p{
+        font-size: 16px;
+        color: black;
+    }
+    .trans h1{
+        font-size: 20px;
+    }
+    .trans-img{
+        width: 100%;
+    }
+}

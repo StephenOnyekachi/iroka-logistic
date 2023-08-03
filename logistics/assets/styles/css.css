@@ -1,0 +1,548 @@
+
+*{
+    border: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.staff a:hover{
+    background-color: rgb(55, 118, 255);
+    color: white;
+    text-decoration: none;
+}
+.staff a{
+    margin-bottom: 10px;
+    border: 1px solid rgb(55, 118, 255);
+    padding: 5px;
+}
+.staff h1{
+    color: gold;
+}
+.staff:hover{
+    background-color: rgb(255, 231, 231);
+}
+.staff{
+    text-transform: capitalize;
+    background-color: rgb(215, 255, 231);
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 3px 10px rgb(44, 44, 44);
+    transition: all 1.5s ease-in-out;
+}
+.items a:hover{
+    border: 1px solid rgb(58, 255, 58);
+    text-decoration: none;
+    letter-spacing: 2px;
+    transform: scale(1.1);
+}
+.items a{
+    color: rgb(58, 255, 58);
+    padding: 5px;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 1.5s ease-in-out;
+    margin: 10px;
+    font-weight: bolder;
+}
+.items p span{
+    font-size: 3rem;
+    color: white;
+    padding: 5px;
+    background-color: rgb(252, 89, 89);
+    border-radius: 50%;
+    font-size: 10px;
+}
+.items p{
+    font-size: 2rem;
+    color: rgb(54, 54, 54);
+}
+.items h1{
+    font-size: 3rem;
+    color: rgb(86, 216, 255);
+    text-transform: capitalize;
+}
+.items i{
+    font-size: 3rem;
+    color: rgb(255, 230, 88);
+}
+.items:hover{
+    background-color: rgb(255, 231, 231);
+    transform: scale(1.1);
+}
+.items{
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0px 3px 10px rgb(44, 44, 44);
+    transition: all 1.5s ease-in-out;
+}
+.ad-body{
+    /* background-color: white; */
+    padding: 10px;
+    margin-top: 70px;
+}
+.ad-bg{
+    background-color: rgb(233, 233, 233);
+    padding: 10px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.logout a:hover{
+    text-decoration: none;
+}
+.logout a{
+    position: absolute;
+    right: 0;
+    color: red;
+    margin: 0px 10px;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+.log button{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: gold;
+    color: white;
+}
+.log label{
+    color: gold;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+.log input{
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    background-color: inherit;
+    border-bottom: 1px solid gold;
+    color: gold;
+}
+.log{
+    border: 1px solid gold;
+    padding: 20px;
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 2px 3px gray;
+}
+table tbody{
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+table thead{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.goods h1{
+    color: gold;
+    font-weight: lighter;
+}
+.goods h3{
+    color: rgb(255, 196, 4);
+    font-weight: bolder;
+}
+.goods{
+    padding: 50px;
+    height: 100vh;
+    background-color: white;
+}
+
+.trans{
+    padding: 20px;
+    background-color: rgb(228, 228, 228);
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    left: 0;
+    height: auto;
+    top: -20px;
+}
+.trans h1{
+    color: gold;
+    text-align: center;
+    padding: 10px;
+}
+.trans-img{
+    width: 100%;
+}
+.trans-img img{
+    width: 100%;
+    height: 200px;
+    border: 2px solid gold;
+    margin: 2px;
+}
+.gallery h1 img{
+    color: white;
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+.gallery h1{
+    color: white;
+}
+.gallery{
+    padding: 20px;
+    background-color: rgb(28, 28, 255);
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    left: 0;
+    height: 300px;
+}
+.contact p{
+    color: black;
+    margin-left: -10px;
+}
+.contact h3{
+    color: gold;
+    font-size: 3rem;
+}
+.contact i{
+    color: gold;
+    font-size: 3rem;
+    border: 1px solid gold;
+    padding: 10px;
+    border-radius: 50%;
+}
+.contact{
+    padding: 30px;
+}
+.comments h4{
+    color: gold;
+    text-transform: capitalize;
+}
+.comments{
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+}
+.comment h3{
+    color: gold;
+    text-align: center;
+}
+.comment{
+    position: relative;
+    background: linear-gradient(to right, rgb(14, 14, 27), rgb(1, 1, 59));
+    padding: 10px;
+}
+.sms textarea{
+    width: 100%;
+    border: 1px solid gold;
+    padding: 10px;
+    margin-bottom: 5px;
+    outline: none;
+}
+.sms input{
+    width: 100%;
+    border: 1px solid gold;
+    padding: 10px;
+    margin-bottom: 5px;
+    outline: none;
+}
+.sms button{
+    width: 100%;
+    border: 1px solid none;
+    outline: none;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: gold;
+    color: white;
+}
+.sms{
+    padding: 10px;
+}
+.about-e h1{
+    font-size: 5rem;
+    font-weight: bolder;
+}
+.about-e{
+    background-color: gold;
+    padding: 20px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+.services i{
+    color: gold;
+    font-size: 2rem;
+    border: 2px solid gold;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    left: -50px;
+    background-color: white;
+}
+.services h3{
+    color: rgb(28, 28, 255);
+    font-size: 3rem;
+}
+.services{
+    border-left: 2px solid gold;
+    padding: 20px;
+    width: 100%;
+    margin-left: 0px;
+}
+
+.body2{
+    position: absolute;
+    padding: 50px;
+    background: linear-gradient(to right, rgb(238, 238, 238), rgb(192, 192, 192));
+    width: 100%;
+    left: 0;
+    top: 510px;
+}
+.logistic{
+    display: flex;
+    padding: 20px; text-align: center;
+}
+.logistic h1{
+    position: relative;
+    color: gold;
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-left: 100px;font-weight: bolder;
+    
+}
+.logistic i{
+    position: relative;
+    color: gold;
+    font-size: 2rem;
+    text-align: center;
+    top: 25px;
+    left: 50px;  
+}
+
+.menu{
+    display: flex;
+    padding: 10px;
+    color: gold;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: black;
+    height: 45px;
+}
+.bars{
+    font-size: 3rem;
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+    top: -10px;
+    z-index: 100;
+    display: none;
+}
+
+.menus{
+    width: 100%;
+    position: absolute;
+    padding-left: 200px; 
+}
+.menus ul{
+    position: absolute;
+    display: flex;
+    top: -10px;
+    margin-left: 20px;
+}
+.menus ul li{ 
+    display: flex;
+    text-decoration: none;
+}
+.menus ul li a{ 
+    text-transform: capitalize;
+    text-decoration: none;
+    color: gold;
+    padding: 10px;
+}
+
+.menus ul li p{
+    padding: 0px 10px;
+    text-decoration: none;
+    color: gold;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+.menus ul li p:hover{
+    cursor: pointer;
+}
+
+.extral ul{
+    position: absolute;
+    display: block;
+    top: 49px;
+    left: 20px;
+    width: 80%;
+    height: 110px;
+    background-color: black;
+    box-shadow: 0 3px 5px rgb(22, 22, 22);
+    padding: 10px;
+    /* display: none; */
+}
+
+.extral ul li{
+    top: 50px;
+    left: 250px;
+    width: 100%;
+    margin: 0px;
+    border-bottom: 1px solid gold;
+}
+
+.extral ul li a{
+    padding: 10px;
+    width: 100%;
+}
+
+.extral ul li i{
+    font-size: 2rem;
+    color: gold;
+    margin-top: 17px;
+    margin-right: 20px;
+}
+
+.logo{
+    position: absolute;
+    top: 30;
+    text-shadow: 1px 2px 3px rgb(27, 27, 27);
+}
+.logo a{
+    color: gold;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+
+.logo a:hover{
+    text-decoration: none;
+}
+.logo img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.bgimg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    animation: zoom 3s linear infinite;
+    z-index: -0;
+    top: 0;
+}
+@keyframes zoom{
+    0%{
+        transform: scale(1);
+    }
+    15%{
+        transform: scale(1);
+    }
+    85%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.outer{
+    position: absolute;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.555));
+    width: 100%;
+    left: 0;
+    height: 100vh;
+    padding: 50px;
+    top: 0;
+}
+.track{
+    margin: 20px;
+    margin-left: 60px;
+    padding: 5px;
+    background-color: rgba(28, 28, 255, 0.219);
+    width: 70%;
+    height: 265px;
+    margin-top: 30px;
+}
+.track form{
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.288);
+    height: 255px;
+    width: 100%;
+}
+.track h3{
+    color: gold;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+.track input{
+    width: 100%;
+    border: 1px solid gold;
+    padding: 10px;
+    margin-bottom: 5px;
+    outline: none;
+}
+.track button{
+    width: 100%;
+    border: 1px solid none;
+    outline: none;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: gold;
+}
+
+
+.track1{
+    margin-top: 30px;
+}
+.track1 h1{
+    color: gold;
+    font-size: 6rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 1px 2px 3px white;
+}
+.track1 h3{
+    color: white;
+    font-size: 6rem;
+    font-weight: bold;
+    height: 16px;
+}
+.track1 p{
+    color: gold;
+    font-size: 3rem;
+    font-weight: lighter;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+.track1 p span::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 20%;
+    border-right: 2px solid #ffd700;
+    animation: blink 0.5s infinite ease;
+}
+
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+

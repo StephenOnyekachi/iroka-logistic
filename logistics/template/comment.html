@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static 'medians' baseUrl%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+
+    <title>comments</title>
+</head>
+<body>
+
+    <div>
+        <div class="col-md-12" style="margin-bottom: 50px;">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+                <div class="logout">
+                    <a href="{% url 'admin_page' %}">
+                        back
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-6">
+                <h1>
+                    Add New Comment
+                </h1>
+                <form action="" method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    <div style="margin: 10px;">
+                        <input class="form-control" type="text" placeholder="name" name="name">
+                    </div>
+                    <div style="margin: 10px;">
+                        <textarea class="form-control" id="" cols="30" rows="10" placeholder="message" name="message">
+
+                        </textarea>
+                    </div>
+                    <div style="margin: 10px;">
+                        <button class="form-control btn-success">Add</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h1>
+                    Comments
+                </h1>
+                <div class="col-md-12">
+                    {% for comment in comment %}
+                    <div class="col-md-12" style="border: 1px solid rgb(4, 250, 147);padding: 10px;border-radius: 5px;margin: 5px;background-color: white;">
+                        <h3>{{comment.name}}</h3>
+                        <p>
+                            {{comment.message}}
+                        </p>
+                        <div style="padding:5px;color:green;">
+                            <span>{{comment.time}}</span>
+                        </div>
+                        <a href="{% url 'delete_comment' comment.id %}" class="btn-danger" style="padding: 5px;margin: 5px;">
+                            Delete
+                        </a>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="col-md-6"></div>
+    </div>
+</body>
+
+<script src="{% static 'styles/js.js' %}"></script>
+
+</html>

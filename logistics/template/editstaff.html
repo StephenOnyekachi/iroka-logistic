@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static 'medians' baseUrl %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>edit</title>
+
+    <style>
+        .search{
+            margin-left: 300px;
+        }
+        .search input{
+            padding: 5px;
+        }
+        .search button{
+            padding: 5px;
+        }
+        .staff img{
+            width: 100px;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+                <div class="logout">
+                    <a href="{% url 'admin_page' %}">
+                        back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-12 ad-body">
+                <div class="col-md-12">
+                    {% for message in messages %}
+                    <div class="col-md-12 bg-success" style="margin:10px;">
+                        <p class="text-white" style="padding:10px;">{{message}}</p>
+                    </div>
+                    {% endfor %}
+                    <div class="col-md-12" style="border: 1px solid rgb(4, 250, 147);padding: 10px;border-radius: 5px;margin: 5px;background-color: white;">
+                        <form action="" method="POST">
+
+                            {% csrf_token %}
+
+                            <div class="col-md-12">
+                                <h1>
+                                    User Information
+                                </h1>
+                                <div class="col-md-12">
+                                    <div>
+                                        <label>Name</label>
+                                        <input class="form-control" type="text" name="name" value="{{edit.username}}">
+                                    </div>
+                                    <div>
+                                        <label>Address</label>
+                                        <input class="form-control" type="text" name="address" value="{{edit.address}}">
+                                    </div>
+                                    <div>
+                                        <label>Gender</label>
+                                        <input class="form-control" type="text" name="gender" value="{{edit.gender}}">
+                                    </div>
+                                    <div>
+                                        <label>Number</label>
+                                        <input class="form-control" type="number" name="phone" value="{{edit.number}}">
+                                    </div>
+                                    <div>
+                                        <label>Email</label>
+                                        <input class="form-control" type="email" name="email" value="{{edit.email}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <button class="btn-success" style="padding: 10px;margin:10px;margin-left:30px;">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="styles/js.js"></script>
+</html>

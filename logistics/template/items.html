@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static 'medians' baseUrl %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>item</title>
+
+    <style>
+        .search{
+            margin-left: 300px;
+        }
+        .search input{
+            padding: 5px;
+        }
+        .search button{
+            padding: 5px;
+        }
+        .staff img{
+            width: 100px;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+                <div class="logout">
+                    <a href="{% url 'admin_page' %}">
+                        back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-12 ad-body">
+                <div class="col-md-12">
+                    {% for item in item %}
+                    <div class="col-md-12" style="border: 1px solid rgb(4, 250, 147);padding: 10px;border-radius: 5px;margin: 5px;background-color: white;">
+                        <div class="col-md-6" style="color:green;">
+                            <h1>
+                                {{item.item}}
+                            </h1>
+                            <a href="{% url 'edit_item' item.id %}" style="padding: 5px;margin: 5px;color:blue;">Edit item</a>
+                            <a href="{% url 'delete_item' item.id %}" style="padding: 5px;margin: 5px;color:blue;">Delete item</a>
+                            {% if item.delivered %}
+                            {% else %}
+                            <a href="{% url 'varify' item.id %}">Varify this Item</a>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-2" style="color:green;">
+                            <h3>
+                                Prepared Time
+                            </h3>
+                            <h3>{{item.peparted_time}}</h3>
+                        </div>
+                        <div class="col-md-4" style="color:green;">
+                            <h3>
+                                Tracking/Booking NO: {{item.booking_mode}}
+                            </h3>
+                            {% if item.delivered %}
+                            <img src="{% static 'Images/d13.jpg' %}" alt="" width="50">
+                            <span>Delivered</span>
+                            {% else %}
+                            <img src="{% static 'Images/d4.jpg' %}"  alt="" width="50">
+                            <span>Not Delivered</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="styles/js.js"></script>
+</html>

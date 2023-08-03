@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'styles2/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles2/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles2/css.css' %}">
+    <link rel="stylesheet" href="{% static 'styles2/media.css' %}">
+
+    <link rel="icon" href="{% static 'styles2/img/001.png' %}">
+
+    <title>home</title>
+    <style>
+        .bars i{
+            display: none;
+        }
+        @media only screen and (max-width: 900px){
+            .bars i{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bars">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div>
+        <!-- for menu -->
+        <!-- //////// -->
+        <div class="">
+            <div class="col-md-12 col-sm-12">
+                <h3 class="text-black">
+                    Royal Firm Logistic
+                </h3>
+            </div>
+            <div class="col-md-12 col-sm-12 home-menu p-0 mb-0">
+                <ul>
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                    <li>
+                        <a href="#about">about us</a>
+                    </li>
+                    <li>
+                        <a href="#contact">contact</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'admin_login'%}">log in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div 
+        style="border-radius: 50%;background-color:rgba(29, 29, 192, 0.658);top:200px;
+        padding:10px;position:fixed;width:50px;height:50px;z-index:100;right:0">
+            <a href="#contact">
+                <i class="fa fa-envelope" style="color: white;padding:10px">
+                    
+                </i>
+            </a>
+        </div>
+        <div class="col-md-12 col-sm-12 intro">
+            <img src="{% static 'styles2/img/outside.jpg' %}" alt="">
+            <div class="intro-bg">
+                <div class="col-md-8">
+                    <h2>Welcome To Royal Firm Logistic</h2>
+                    <h3>We, <span class="typing"></span></h3>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-12 col-sm-12 forms">
+                        <form action="{% url 'search' %}" method="GET" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <h3>Traking Number</h3>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control"
+                                name="track" 
+                                placeholder="Enter tracking number">
+                            </div>
+                            <div class="col-md-12">
+                                <button class="form-control">
+                                    Track
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12" id="about">
+            <h3>About Us:</h3>
+            <div class="col-md-6">
+                <p>
+                    Royal Firm Logistics is the Nigeria's leading logistic service
+                    company, We have a wide experience in overland industry specific
+                    logistic solutions like pharmaceutical logistics, retail and
+                    automotive logistics by road.<br><br>
+
+                    We bring your goods safely to your destinations with our great
+                    road services. We offer LLC and FLC shipments that are fast and
+                    effective with no delays.
+                    Royal Firm Logistics is the Nigeria's leading logistic service
+                    company, We have a wide experience in overland industry specific
+                    logistic solutions like pharmaceutical logistics, retail and
+                    automotive logistics by road.<br><br>
+
+                    We bring your goods safely to your destinations with our great
+                    road services. We offer LLC and FLC shipments that are fast and
+                    effective with no delays.<br><br>
+                </p>
+            </div>
+            <div class="col-md-6 about">
+                <img src="{% static 'styles2/img/9.jpg' %}" alt="">
+                <div class="about-con">
+                    <h3>Working Hours</h3>
+                    <div class="col-md-4">
+                        <h4>6 - 6</h4>
+                        <h6>Mon - Fri</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>12 - 6</h4>
+                        <h6>Sta</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>0 - 0</h4>
+                        <h6>Sun</h6>
+                    </div>
+                    <h6>
+                        For your awyness of our working days
+                    </h6>
+                </div>
+            </div>
+            <h3>About Partnership:</h3>
+            <div class="col-md-12 col-sm-12">
+                <div class="col-md-12">
+                    <div class="col-md-3 partnership">
+                        <img src="{% static 'styles2/img/1.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-3 partnership">
+                        <img src="{% static 'styles2/img/2.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-3 partnership">
+                        <img src="{% static 'styles2/img/3.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-3 partnership">
+                        <img src="{% static 'styles2/img/4.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-3 partnership">
+                        <img src="{% static 'styles2/img/5.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-12 tran">
+                    <h3>Our Transportations:</h3>
+                    <div class="col-md-6 trans">
+                        <img src="{% static 'styles2/img/bg1.png' %}" width="200" alt="">
+                    </div>
+                    <div class="col-md-6 trans">
+                        <img src="{% static 'styles2/img/bg2.png' %}" width="200" alt="">
+                    </div>
+                    <div class="col-md-6 trans">
+                        <img src="{% static 'styles2/img/bg3.png' %}" width="200" alt="">
+                    </div>
+                    <div class="col-md-6 trans">
+                        <img src="{% static 'styles2/img/bg4.png' %}" width="200" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 custormers">
+                <h3>Our Custormers Says:</h3>
+                <div class="">
+                    {% for comment in comment %}
+                    <div class="col-md-3">
+                        <h5>{{comment.name}}</h5>
+                        <p>
+                            {{comment.message}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md12 col-sm-12 home-footer" id="contact">
+            <div class="col-md-6">
+                <h3>Contact Us:</h3>
+                <div class="col-md-12">
+                    <br>
+                    <br>
+                    <p>
+                        <i class="fa fa-envelope-o"></i> <Span>royalfirmlogisticsowerri@gmail.com</Span>
+                    </p>
+                    <br>
+                    <br>
+                    <p>
+                        <i class="fa fa-phone"></i> <Span>+234 8132 704550</Span>
+                    </p>
+                    <br>
+                    <br>
+                    <p>
+                        <i class="fa fa-map-marker"></i> <Span>120 Ikengbu Road Owerri, Imo State</Span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Email</h3>
+                <div class="col-md-12">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {% for message in messages %}
+                        <div class="col-md-12 bg-success" style="margin:10px;">
+                            <p class="text-white" style="padding:10px;">{{message}}</p>
+                        </div>
+                        {% endfor %}
+                        <div>
+                            <label>Name:</label>
+                            <input type="text"
+                            placeholder="Name"
+                            name="name"
+                            class="form-control">
+                        </div>
+                        <br>
+                        <div>
+                            <label>Email/Phone Number:</label>
+                            <input type="text"
+                            placeholder="Enter your email or phone number"
+                            name="email"
+                            class="form-control">
+                        </div>
+                        <br>
+                        <div>
+                            <label>Text:</label>
+                           <textarea id="" cols="30" rows="10"
+                           class="form-control"
+                           name="message">
+
+                           </textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <button class="form-control">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12"style="background-color:black;text-align:center;padding:30px;">
+            <div>
+                <h3 style="">
+                    Royal Firm Logistic
+                </h3>
+                <i class="fa fa-envelope-o"></i> <Span>royalfirmlogisticsowerri@gmail.com</Span>
+                <i class="fa fa-phone"></i> <Span>+234 8132 704550</Span>
+                <i class="fa fa-map-marker"></i> <Span>120 Ikengbu Road Owerri, Imo State</Span>
+            </div>
+            <span>&copy; 2023 royal firm logistic</span>
+        </div>
+    </div>
+</body>
+<script src="{% static 'styles2/js.js' %}"></script>
+</html>

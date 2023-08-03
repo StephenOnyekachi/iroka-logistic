@@ -1,0 +1,300 @@
+
+{% load static %}
+{% static "medians" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+
+    <!-- for swiper linking -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/> -->
+
+
+    <title>home</title>
+
+    <style>
+        #about i, #about h3{
+            color: blue;
+        }
+        #about p{
+            font-size: 16px;
+        }
+        .about-e{
+            background-color: blue;
+        }
+        .about-e p{
+            color: white;
+            font-weight: bolder;
+            font-size: 2rem;
+        }
+        .logistic i{
+            font-size: 50px;
+        }
+        .sms label{
+            color: blue;
+            font-weight: lighter;
+        }
+        .footer{
+            padding: 50px;
+            background-color: black;
+            position: absolute;
+            /* z-index: 100; */
+            bottom: 0;
+            top: 420vh;
+            text-align: center;
+            width: 100%;
+            height: auto;
+        }
+        .footer p{
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+        }
+        .footer p i{
+            margin-left: 10px;
+            padding: 10px;
+            display: flex;
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <img src="{% static 'Images/006.jpg' %}" alt="">
+                    <a href="">
+                        Royal Firm Logistics
+                    </a>
+                </div>
+
+                <div class="bars">
+                    <i class="fa fa-bars"></i>
+                </div>
+
+                <div class="menus">
+                    <ul>
+                        <li>
+                            <a href="#">home</a>
+                        </li>
+                        <li>
+                            <a href="#about">about</a>
+                        </li>
+                        <li>
+                            <a href="#contact">contact</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'admin_login' %}">log in</a>
+                            <i class="fa fa-lock" style="margin-top:15px;"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 body">
+            <img class="bgimg" src="{% static 'Images/001.jpeg' %}" alt="">
+            <div class="outer">
+                <div class="col-md-6 track1">
+                    <h1><b style="color: blue;"> Royal</b> Firm <b style="color: black;">Logistics</b></h1>
+                    <h3>What Do We Do ?</h3>
+                    <p>
+                        We, 
+                        <span class="typing"></span>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="track">
+                        <form action="{% url 'search' %}" method="GET">
+                            {% csrf_token %}
+                            <h3>TRACK HERE</h3>
+                            <input type="text" placeholder="tracking id" required name="track">
+                            <button>Track</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 body2">
+                <div class="col-md-12 gallery">
+                    <h1>
+                        Royal Firm logistics
+                        <img src="{% static 'Images/006.jpg' %}" alt="">
+                    </h1>
+                    <div class="logistic">
+                        <i class="fa fa-car fa-x5"></i>
+                        <h1>LOGISTICS</h1>
+                        <i class="fa fa-truck fa-x5"></i>
+                    </div>
+                </div>
+                <div class="col-md-12 trans">
+                    <h1 style="color:blue;">
+                        Our Transportation
+                    </h1>
+                    <div class="col-mg-12 trans-img">
+                        <div class="col-md-6">
+                            <img src="{% static 'Images/010.jpg' %}" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'Images/007.jpg' %}" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'Images/008.webp' %}" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'Images/009.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12 comment">
+                    <div class="">
+                        <h3 style="font-weight:bold;">
+                            Our Customers Says
+                        </h3>
+                        {% for comment in comment %}
+                        <div class="col-md-3">
+                            <div class="comments">
+                                <h4>{{comment.name}}</h4>
+                                <p>
+                                    {{comment.message}}
+                                </p>
+                                <span></span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-12 contact" id="about">
+                    <div class="col-md-6">
+                        <!-- <i class="fa fa-user"></i> -->
+                        <div class="">
+                            <h3>About Us</h3>
+                            <div class="col-md-12">
+                                <p>
+                                    Royal Firm Logistics is the Nigeria's leading logistic service
+                                    company, We have a wide experience in overland industry specific
+                                    logistic solutions like pharmaceutical logistics, retail and
+                                    automotive logistics by road.<br><br>
+
+                                    We bring your goods safely to your destinations with our great
+                                    road services. We offer LLC and FLC shipments that are fast and
+                                    effective with no delays.
+                                    Royal Firm Logistics is the Nigeria's leading logistic service
+                                    company, We have a wide experience in overland industry specific
+                                    logistic solutions like pharmaceutical logistics, retail and
+                                    automotive logistics by road.<br><br>
+
+                                    We bring your goods safely to your destinations with our great
+                                    road services. We offer LLC and FLC shipments that are fast and
+                                    effective with no delays.<br><br>
+
+                                </p>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="about-e">
+                                    <h1>10</h1>
+                                    <p>Years</p>
+                                    <p>EXPERIANCE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" id="contact">
+                        <!-- <i class="fa fa-phone" style="margin-top: 30px;"></i> -->
+                        <div class="">
+                            <h3>
+                                Our Contact
+                            </h3>
+                            <div class="col-md-12">
+                                <p>
+                                    <i class="fa fa-envelope-o"></i> <Span>royalfirmlogisticsowerri@gmail.com</Span>
+                                </p>
+                                <p>
+                                    <i class="fa fa-phone"></i> <Span>+234 8132 704550</Span>
+                                </p>
+                                <p>
+                                    <i class="fa fa-map-marker"></i> <Span>120 Ikengbu Road Owerri, Imo State</Span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 services">
+                    <i class="fa fa-envelope"></i>
+                    <div class="">
+                        <h3>Message Us</h3>
+                        <div class="col-md-12">
+                            <form action="" method="POST" enctype="multipart/form-data">
+
+                                {% csrf_token %}
+                                {% for message in messages %}
+                                <div class="col-md-12 bg-success" style="margin:10px;">
+                                    <p class="text-white" style="padding:10px;">{{message}}</p>
+                                </div>
+                                {% endfor %}
+
+                                <div class="col-md-6 sms">
+                                    <label>
+                                        Name:
+                                    </label>
+                                    <input class="form-control" type="text" placeholder="Your name" name="name">
+                                </div>
+                                <div class="col-md-6 sms">
+                                    <label>
+                                        Email:
+                                    </label>
+                                    <input class="form-control" type="text" placeholder="Your email or phone number" name="email">
+                                </div>
+                                <div class="col-md-12 sms">
+                                    <label>
+                                        Message:
+                                    </label>
+                                    <textarea class="form-control" name="message"></textarea>
+                                </div>
+                                <div class="col-md-12 sms">
+                                    <button class="form-control"
+                                    style="background-color:blue;font-size:18px;font-family:arial black;padding:10px;">
+                                        Send
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer">
+            <div>
+                
+            </div>
+            <div>
+                <h3 style="margin-top: -35px;">
+                    Royal Firm Logistic
+                </h3>
+                <i class="fa fa-envelope-o"></i> <Span>royalfirmlogisticsowerri@gmail.com</Span>
+                <i class="fa fa-phone"></i> <Span>+234 8132 704550</Span>
+                <i class="fa fa-map-marker"></i> <Span>120 Ikengbu Road Owerri, Imo State</Span>
+            </div>
+            <span>&copy; 2023 royal firm logistic</span>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'styles/js.js' %}">
+
+</script>
+</html>

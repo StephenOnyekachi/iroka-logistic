@@ -1,0 +1,98 @@
+@media only screen and (max-width: 900px){
+
+    .logo a{
+        font-size: 20px;
+    }
+
+    .logo img{
+        margin-top: -10px;
+    }
+    .bars{
+        font-size: 20px;
+        border: 1px solid black;
+        padding: 10px;
+        width: 40px;
+        position: fixed;
+        right: 0;
+        margin-right: 5px;
+        z-index: 100;
+        display: block;
+        margin-top: -15px;
+    }
+
+    .home-menu{
+        padding: 15px;
+        background-color: black;
+        display: none;
+    }
+    .home-menu ul{
+        display: block;
+        margin: 0px 10px;
+    }
+    .home-menu ul li{
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+    }
+    .home-menu ul li a{
+        font-weight: lighter;
+        transition: all 1.5s ease-in-out;
+        color: #ffffff;
+        font-size: 16px;
+        text-transform: capitalize;
+        text-decoration: none;
+    }
+
+    .intro{
+        height: 100vh;
+        width: 100%;
+        margin: 0px;
+        position: relative;
+    }
+    .intro img{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 100vh;
+    }
+    .intro-bg{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 100vh;
+        background-color: #000000b7;
+        padding: 30px;
+    }
+    .intro-bg h2{
+        margin-top: 25mm;
+        color: white;
+        text-transform: capitalize;
+        font-weight: bolder;
+        font-size: 40px;
+    }
+    .intro-bg h3{
+        color: white;
+        text-transform: capitalize;
+        font-weight: lighter;
+        font-size: 20px;
+    }
+    .forms{
+        margin-top: 30px;
+        border: 1px solid white;
+        padding: 30px;
+        text-align: center;
+    }
+    .forms input{
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 0px;
+        text-align: center;
+        margin: 10px;
+        background-color: inherit;
+        margin-left: 0px;
+    }
+    .darshbord{
+        display: none;
+        height: 200px;
+    }
+}

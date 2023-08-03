@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static 'medians' baseUrl %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Image/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>staff</title>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+
+                <div class="logout">
+                    <a href="{% url 'admin_page' %}">
+                        back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-12 ad-body">
+                <div class="col-md-12">
+
+                    {% for message in messages %}
+                    <div class="col-md-12 bg-success" style="margin:10px;">
+                        <p class="text-white" style="padding:10px;">{{message}}</p>
+                    </div>
+                    {% endfor %}
+
+                    {% for user in users %}
+                    <div class="col-md-12" style="border: 1px solid rgb(4, 250, 147);padding: 10px;border-radius: 5px;margin: 5px;background-color: white;">
+                        <div class="col-md-4">
+                            <h1>
+                                {{user.username}}
+                            </h1>
+                            <a href="{% url 'edit_user' user.id %}" style="padding:5px;background-color:green;margin:5px;color:white;">
+                                Edit Staff
+                            </a>
+                            <a href="{% url 'delete_user' user.id %}" style="padding:5px;background-color:green;margin:5px;color:white;">
+                                Delete Staff
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>
+                                Gender:
+                            </h3>
+                            <p>{{user.gender}}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <h3>
+                                Date Joined:
+                            </h3>
+                            <p>{{user.date_joined}}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <h3>
+                                Last Seen:
+                            </h3>
+                            <p>{{user.last_login}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="styles/js.js"></script>
+</html>

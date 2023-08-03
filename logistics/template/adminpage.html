@@ -1,0 +1,117 @@
+
+{% load static %}
+{% static 'medians' as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>admin</title>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+
+                <div class="logout">
+                    <a href="{% url 'user_logout' %}">
+                        <i class="fa fa-power-off"></i>
+                        log out
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-12 ad-body">
+
+                <div style="margin-left:20px;">
+                    <p style="color:gold;font-size:2rem;padding:5px;width:400px;">
+                        Welcome back {{request.user}}
+                    </p>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="items">
+                        <i class="fa fa-users"></i>
+                        <h1>
+                            staffs
+                        </h1>
+                        <p>total <span>{{users.count}}</span></p>
+                        <a href="{% url 'users' %}">open</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="items">
+                        <i class="fa fa-cubes"></i>
+                        <h1>
+                            items
+                        </h1>
+                        <p>total <span>{{item.count}}</span></p>
+                        <a href="{% url 'item' %}">open</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="items">
+                        <i class="fa fa-envelope-o"></i>
+                        <h1>
+                            messages
+                        </h1>
+                        <p>total <span>{{emails.count}}</span></p>
+                        <a href="{% url 'message' %}">open</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="items">
+                        <i class="fa fa-cube"></i>
+                        <h1>
+                            add new items
+                        </h1>
+                        <p> <span></span></p>
+                        <a href="{% url 'new_item' %}">open</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="items">
+                        <i class="fa fa-user-o"></i>
+                        <h1>
+                            create new Staff
+                        </h1>
+                        <p> <span></span></p>
+                        <a href="{% url 'new_user' %}">open</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="items">
+                        <i class="fa fa-envelope-open"></i>
+                        <h1>
+                            comment
+                        </h1>
+                        <p>total <span>{{comment.count}}</span></p>
+                        <a href="{% url 'comment' %}">open</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'styles/js.js' %}"></script>
+</html>

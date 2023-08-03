@@ -1,0 +1,68 @@
+
+{% load static %}
+{% static 'medians' as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>login</title>
+    <style>
+        .log{
+            width: 600px;
+            margin-left: 300px;
+        }
+        @media only screen and (max-width: 900px){
+            .log{
+                width: 100%;
+                margin-left: 0px;
+            }
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12 body">
+            <img class="bgimg" src="{% static 'Images/001.jpeg' %}" alt="" enctypy="multipart/form-data">
+            <div class="col-md-12 outer">
+                <div class="col-md-12 log">
+                    <form method="POST" action="">
+
+                        {% csrf_token%}
+
+                        <div class="col-md-12">
+                            <label for="">User Name:</label><br>
+                            <input type="text" placeholder="enter your name" name="name">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Password:</label><br>
+                            <input type="password" placeholder="enter your Password" name="password">
+                        </div>
+
+                        {% for message in messages %}
+                        <div class="col-md-12 bg-info" style="margin:10px;">
+                            <p class="text-white" style="padding:10px;">{{message}}</p>
+                        </div>
+                        {% endfor %}
+
+                        <div class="col-md-12">
+                            <button>Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="styles/js.js"></script>
+</html>

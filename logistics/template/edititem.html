@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static 'medians' baseUrl %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>edit</title>
+
+    <style>
+        .search{
+            margin-left: 300px;
+        }
+        .search input{
+            padding: 5px;
+        }
+        .search button{
+            padding: 5px;
+        }
+
+        .staff img{
+            width: 100px;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        .op{
+            border-bottom: 1px solid black;
+            background-color: white;
+            padding: 5px;
+        }
+        .op h3{
+            color: gray;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 16px;
+        }
+        .op label{
+            color: gold;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+                <div class="logout">
+                    <a href="{% url 'item' %}">
+                        back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-12 ad-body">
+                <div class="col-md-12">
+                    <div class="col-md-12" style="border: 1px solid rgb(4, 250, 147);padding: 10px;border-radius: 5px;margin: 5px;background-color: white;">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="col-md-6">
+                                <h1>
+                                    about the goods
+                                </h1>
+                                <div class="col-md-12">
+                                    <div>
+                                        <label>Sender Name</label>
+                                        <input class="form-control" type="text" placeholder="name" name="s_name"
+                                               value="{{item.sender_name}}">
+                                    </div>
+                                    <div>
+                                        <label>Sender Name</label>
+                                        <input class="form-control" type="text" placeholder="address" name="s_address"
+                                               value="{{item.sender_address}}">
+                                    </div>
+                                    <div>
+                                        <label>Sender Number</label>
+                                        <input class="form-control" type="number" placeholder="number" name="s_number"
+                                        value="{{item.sender_number}}">
+                                    </div>
+                                    <div>
+                                        <label>Receiver Name</label>
+                                        <input class="form-control" type="text" placeholder="name" name="r_name"
+                                        value="{{item.receiver_name}}">
+                                    </div>
+                                    <div>
+                                        <label>Receiver Address</label>
+                                        <input class="form-control" type="text" placeholder="address" name="r_address"
+                                        value="{{item.receiver_address}}">
+                                    </div>
+                                    <div>
+                                        <label>Receiver Number</label>
+                                        <input class="form-control" type="number" placeholder="number" name="r_number"
+                                        value="{{item.receiver_number}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-md-12">
+                                    <div class="op">
+                                        <h3>tracking/booking no</h3>
+                                        <label>{{item.booking_mode}}</label>
+                                    </div>
+                                    <div class="op">
+                                        <h3>Type of Consignment</h3>
+                                        <label>{{item.consignment_no}}</label>
+                                    </div>
+                                    <div class="op">
+                                        <h3>Weight</h3>
+                                        <label>{{item.weight}}</label>
+                                    </div>
+                                    <div class="op">
+                                        <h3>Invoice no</h3>
+                                        <label>{{item.invoice_no}}</label>
+                                    </div>
+
+                                    <div class="op">
+                                        <h3>Qnty</h3>
+                                        <label>{{item.qnty}}</label>
+                                    </div>
+                                    <div>
+                                        {% if item.delivered %}
+                                        <img src="{% static 'Images/d13.jpg' %}" width="50" alt="">
+                                        <span>Delivered</span>
+                                        {% else %}
+                                        <img src="{% static 'Images/d4.jpg' %}" width="50" alt="">
+                                        <span>Not Delivered</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <button class="btn-success" style="padding: 10px;margin: 10px;">SAVE</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="styles/js.js"></script>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'styles2/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles2/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles2/css.css' %}">
+    <link rel="stylesheet" href="{% static 'styles2/media.css' %}">
+
+    <link rel="icon" href="{% static 'styles2/img/001.png' %}">
+
+    <title>home</title>
+    <style>
+    <style>
+        .bars i{
+            display: none;
+        }
+        @media only screen and (max-width: 900px){
+            .bars i{
+                display: block;
+            }
+            .darshbord{
+                display: none;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bars">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div>
+        <!-- for menu -->
+        <!-- //////// -->
+        <div class="col-md-12 bg-dark menu">
+            <h4 class="text-success">
+                Welcome Back {{request.user}}
+            </h4>
+        </div>
+        <!-- for user darshbord -->
+        <!-- //////////////// -->
+        <div class="col-md-2 darshbord bg-dark">
+            <div class="col-md-12 student">
+                {% if request.user.is_superuser %}
+                <ul>
+                    <li>
+                        <a href="{% url 'admin_page' %}">
+                            {{users.count}}
+                            Staffs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'new_user' %}">
+                            Ad New Staffs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'item' %}">
+                            <span>{{item.count}}</span>
+                            Items
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'new_item' %}">
+                            <span></span>
+                            Add New Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'message' %}">
+                            <span>{{emails.count}}</span>
+                            Message
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'comment' %}">
+                            <span>{{comment.count}}</span>
+                            Comments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'user_logout' %}">
+                            Log Out
+                        </a>
+                    </li>
+                </ul>
+                {% else %}
+                <ul>
+                    <li>
+                        <a href="{% url 'item' %}">
+                            <span>{{item.count}}</span>
+                            Items
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'new_item' %}">
+                            <span></span>
+                            Add New Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'message' %}">
+                            <span>{{emails.count}}</span>
+                            Message
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'comment' %}">
+                            <span>{{comment.count}}</span>
+                            Comments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'user_logout' %}">
+                            Log Out
+                        </a>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <!-- for result table -->
+        <!-- //////////////// -->
+        <div class="col-md-10 body">
+            <div class="result">
+                <div class="col-md-6">
+                    <h3>Staff</h3>
+                </div>
+                <div class="col-md-6">
+                    <h3>Total Staff</h3>
+                </div>
+                <hr>
+                <div class="col-md-12">
+                    {% for user in users %}
+                    <div class="col-md-12 students">
+                        <div class="col-md-4">
+                            <h4 class="text-success">
+                                {{user.username}}
+                            </h4>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="col-md-3">
+                                <h4 class="text-info">
+                                    Gender: {{user.gender}}
+                                </h4>
+                            </div>
+                            <div class="col-md-3">
+                                <h4 class="text-info">
+                                    Date Joined: {{user.date_joined}}
+                                </h4>
+                            </div>
+                            <div class="col-md-3">
+                                <h4 class="text-info">
+                                    Lass Seen: {{user.last_login}}
+                                </h4>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="{% url 'delete_user' user.id %}" class="text-danger">
+                                    Delete
+                                </a>
+                                <a href="{% url 'edit_user' user.id %}" class="text-success">
+                                    Edit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'styles2/js.js' %}"></script>
+</html>

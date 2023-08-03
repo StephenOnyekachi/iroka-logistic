@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% static 'medians' baseUrl %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static 'Images/006.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <title>add new item</title>
+
+    <style>
+        .search{
+            margin-left: 300px;
+        }
+        .search input{
+            padding: 5px;
+        }
+        .search button{
+            padding: 5px;
+        }
+        .staff img{
+            width: 100px;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <div>
+        <div class="col-md-12">
+             
+            <div class="menu">
+                <div class="logo">
+                    <i class="fa fa-street-view"></i>
+                    <a href="">
+                        LOGISTIC
+                    </a>
+                </div>
+                <div class="logout">
+                    <a href="{% url 'admin_page' %}">
+                        back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div>
+        <div class="col-md-12 ad-bg">
+            <div class="col-md-12 ad-body">
+                <div class="col-md-12">
+                    <div class="col-md-12" style="border: 1px solid rgb(4, 250, 147);padding: 10px;border-radius: 5px;margin: 5px;background-color: white;">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="col-md-6">
+                                <h1>
+                                    about the goods
+                                </h1>
+                                <div class="col-md-12">
+                                    <div>
+                                        <label>Sender Name</label>
+                                        <input class="form-control" type="text" placeholder="name" name="sender_name">
+                                    </div>
+                                    <div>
+                                        <label>Sender Address</label>
+                                        <input class="form-control" type="text" placeholder="address" name="sender_address">
+                                    </div>
+                                    <div>
+                                        <label>Sender Number</label>
+                                        <input class="form-control" type="number" placeholder="number" name="sender_number">
+                                    </div>
+                                    <div>
+                                        <label>Receiver Name</label>
+                                        <input class="form-control" type="text" placeholder="name" name="receiver_name">
+                                    </div>
+                                    <div>
+                                        <label>Receiver Address</label>
+                                        <input class="form-control" type="text" placeholder="address" name="receiver_address">
+                                    </div>
+                                    <div>
+                                        <label>Receiver Number</label>
+                                        <input class="form-control" type="number" placeholder="number" name="receiver_number">
+                                    </div>
+                                    <div>
+                                        <label>Item Name</label>
+                                        <input class="form-control" type="text" placeholder="address" name="item">
+                                    </div>
+                                    <div>
+                                        <label>Weight</label>
+                                        <input class="form-control" type="number" placeholder="number" name="weight">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h1>
+                                    about the Consignment
+                                </h1>
+                                <div class="col-md-12">
+                                    <div>
+                                        <label>Qnty</label>
+                                        <input class="form-control" type="text" placeholder="qnty" name="qnty">
+                                    </div>
+                                    <div>
+                                        <label>Total freight</label>
+                                        <input class="form-control" type="text" placeholder="total freight" name="freight">
+                                    </div>
+                                    <div>
+                                        <label>Destination office</label>
+                                        <input class="form-control" type="text" placeholder="destination offer" name="destination">
+                                    </div>
+
+                                    <div>
+                                        <label>Pickup date</label>
+                                        <input class="form-control" type="date" placeholder="pickup date" name="pickup_date">
+                                    </div>
+                                    <div>
+                                        <label>Pickup time</label>
+                                        <input class="form-control" type="time" placeholder="pickup time" name="pickup_time">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <button class="btn-success" style="padding: 10px;margin: 10px;">Create</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+
+<script src="styles/js.js"></script>
+</html>
